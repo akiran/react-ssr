@@ -1,0 +1,25 @@
+{
+  "name": "react-ssr",
+  "version": "0.1.0",
+  "description": "React server side rendering",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akiran/react-ssr.git"
+  },
+  "keywords": [
+    "React",
+    "Server-side",
+    "rendering",
+    "isomorphic"
+  ],
+  "author": "Kiran Abburi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akiran/react-ssr/issues"
+  },
+  "homepage": "https://github.com/akiran/react-ssr"
+}
