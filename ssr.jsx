@@ -1,14 +1,16 @@
 var React = require('react');
 var Router = require('react-router');
+var Html = require('./html');
 
-var isomorphic = function (routesPath, options) {
+var ssr = function (routesPath, props) {
   var routes = require(routesPath);
   return function (req, res, next) {
     Router.run(routes, req.url, function (Handler, state) {
-      var html = React.renderToString(React.createElement(Handler));
-      res.status(200).send(html);
+      var markup = React.renderToString(<Handler />);
+      var html   = React.renderToStaticMarkup(<Html {...props} markup={markup} />);
+      res.status(200).send('<!DOCTYPE html>' + html);
     });
   }.bind(this);
 };
 
-module.exports = isomorphic;
+module.exports = ssr;

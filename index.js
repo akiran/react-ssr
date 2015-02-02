@@ -5,7 +5,6 @@ module.exports = function (webpackConfig) {
   var requireConfig = assign({}, webpackConfig, {
     recursive: true,
   });
-  var webpackRequire = enhancedRequire(module, requireConfig);
-  var ssr = webpackRequire('./ssr');
-  return ssr;
+  var webpackRequire = require("enhanced-require")(module, requireConfig);
+  return webpackRequire('./ssr');
 };

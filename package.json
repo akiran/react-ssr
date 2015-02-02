@@ -31,5 +31,8 @@
     "react": "*",
     "react-router": "*"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "react": "^0.12.2",
+    "react-router": "^0.11.6"
+  }
 }
