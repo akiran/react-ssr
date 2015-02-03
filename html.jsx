@@ -8,7 +8,6 @@ var Html = React.createClass({
     scriptNodes = this.props.js.map(function (jsPath) {
       return <script src={jsPath}></script>;
     })
-
     return (
       <html>
         <head>
@@ -17,9 +16,9 @@ var Html = React.createClass({
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <title>{this.props.title}</title>
           {linkNodes}
-          {scriptNodes}
         </head>
         <body dangerouslySetInnerHTML={{__html: this.props.markup}}></body>
+        {scriptNodes}
       </html>
     );
   }

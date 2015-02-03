@@ -2,9 +2,9 @@ var React = require('react');
 var Router = require('react-router');
 var Html = require('./html');
 
-var ssr = function (routesPath, props) {
-  var routes = require(routesPath);
+var ssrRouter = function (targetPath, props) {
   return function (req, res, next) {
+    var routes = require(targetPath);
     Router.run(routes, req.url, function (Handler, state) {
       var markup = React.renderToString(<Handler />);
       var html   = React.renderToStaticMarkup(<Html {...props} markup={markup} />);
@@ -13,4 +13,4 @@ var ssr = function (routesPath, props) {
   }.bind(this);
 };
 
-module.exports = ssr;
+module.exports = ssrRouter;
