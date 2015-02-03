@@ -9,7 +9,7 @@ module.exports = function (webpackConfig) {
   });
   var webpackRequire = require("enhanced-require")(module, requireConfig);
   return {
-    router: webpackRequire('./router'),
-    component: webpackRequire('./component')
+    router: webpackRequire('./lib/router'),
+    component: webpackRequire('./lib/component')
   };
 };
